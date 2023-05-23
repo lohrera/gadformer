@@ -1,0 +1,7 @@
+torch==2.0.0
+pytorch-lightning
+pandas
+ruamel.yaml
+python-stopwatch
+matplotlib==3.6.2
+scikit-learn
