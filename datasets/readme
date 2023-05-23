@@ -20,7 +20,7 @@ synthetic datasets:
         'Trajectorys2_72_400_anom0.01novelty.csv',
         'Trajectorys2_72_400_anom0.05novelty.csv',
         'Trajectorys2_100_150_anom0.1novelty.csv',
-        'driver_trajectories/real_drivers_dataset_thresh_40.csv',
+        'real_drivers_dataset_thresh_40.csv',
         'Trajectorys2_72_200_anom.csv',                                 #15
         'Trajectorys2_72_400_anom0.00.csv',   # unsup anom levels
         'Trajectorys2_72_400_anom0.01.csv',     # unsup anom levels
@@ -34,11 +34,11 @@ synthetic datasets:
         'Trajectorys2_72_400_anom.csv',
         'Trajectorys2_72_2000_anom.csv',   #25
 
-        'driver_trajectories/real_drivers_dataset_thresh_40_unsuptest_108_120.csv',
+        'real_drivers_dataset_thresh_40_unsuptest_108_120.csv',
 
-        'driver_trajectories/real_drivers_dataset_thresh_40_unsuptrain_463_565.csv',
+        'real_drivers_dataset_thresh_40_unsuptrain_463_565.csv',
 
-        'driver_trajectories/real_drivers_dataset_thresh_40_unsupval_101_120.csv',
+        'real_drivers_dataset_thresh_40_unsupval_101_120.csv',
 
         'Trajectorys2_100_10000_norm.csv',
         'Trajectorys2_100_5000_anom.csv', #30
@@ -49,14 +49,14 @@ synthetic datasets:
         'Trajectorys2_100_320_anom.csv',   #34
 
 
-        'driver_trajectories/real_drivers_dataset_thresh_40_semisuptrain_401_401.csv', #35
+        'real_drivers_dataset_thresh_40_semisuptrain_401_401.csv', #35
 
-        'driver_trajectories/real_drivers_dataset_thresh_40_semisupval_123_187.csv',
-        'driver_trajectories/real_drivers_dataset_thresh_40_semisuptest_126_187.csv',
-        'driver_trajectories/real_drivers_dataset_thresh_71_unsuptrain_533_565.csv',
+        'real_drivers_dataset_thresh_40_semisupval_123_187.csv',
+        'real_drivers_dataset_thresh_40_semisuptest_126_187.csv',
+        'real_drivers_dataset_thresh_71_unsuptrain_533_565.csv',
 
-        'driver_trajectories/real_drivers_dataset_thresh_71_unsupval_110_120.csv',
-        'driver_trajectories/real_drivers_dataset_thresh_71_unsuptest_114_120.csv', #40
+        'real_drivers_dataset_thresh_71_unsupval_110_120.csv',
+        'real_drivers_dataset_thresh_71_unsuptest_114_120.csv', #40
         'brightkite_500_0336_2.1_test.csv',
         'brightkite_500_1446_2.1_train_semi.csv',
         'brightkite_500_1569_2.1_train_unsup.csv',
