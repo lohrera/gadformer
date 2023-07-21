@@ -12,5 +12,5 @@ to be done:
 
 - segment_len != 1
 - add remaining experiment results
-- update paper camera ready version accordingly
+- update paper accordingly
 
