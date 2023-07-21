@@ -44,7 +44,15 @@ models=[
 { "model_type": "GADFormer", "seg_len": 1, "loss_func": "bce", "heads":8 },
 { "model_type": "GRU", "seg_len": 1, "loss_func": "bce" },
 
-global_seeds=[34,38,30]
+#global_seeds=[34,38,30]
+#global_seeds=[38]
+num_seeds=10
+global_seeds=range(0, num_seeds)
+
+#todo: 
+#- scaler change robust to standard
+#- seg_len != 1
+#- GRU re-run with 10 seeds
 
 #experiments
 experiments_unsup_orig=[
