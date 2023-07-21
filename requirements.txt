@@ -5,3 +5,5 @@ ruamel.yaml
 python-stopwatch
 matplotlib==3.6.2
 scikit-learn
+pytorch_optimizer
+umap-learn
