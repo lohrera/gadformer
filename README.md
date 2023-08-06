@@ -41,6 +41,11 @@ done:
   |U|Synthetic Noise .2|0.90270+-0.033|0.75150+-0.092|
   |U|Synthetic Noise .5|0.78965+-0.061|0.44674+-0.195|
 
+- improved experiment results for Semi-supervised anomaly detection with noise:
+
+  |setting |experiment  |AVG AUROC |AVG AUPRC |
+  |--- | --- | ---| ---|
+  |E|Synthetic Noise .0|0.96957+-0.016|0.90741+-0.026|
 
 to be done:
 
