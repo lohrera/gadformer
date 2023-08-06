@@ -30,6 +30,7 @@ done:
   |setting |experiment  |AVG AUROC |AVG AUPRC |
   |--- | --- | ---| ---|
   |E|Synthetic Novelty .0|0.96895+-0.016|0.90605+-0.026|
+  |E|Synthetic Novelty .01|0.97818+-0.006|0.89580+-0.031|
 
 to be done:
 
