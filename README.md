@@ -33,6 +33,13 @@ done:
   |E|Synthetic Novelty .01|0.97818+-0.006|0.89580+-0.031|
   |E|Synthetic Novelty .05|0.95834+-0.020|0.79626+-0.049|
 
+- improved experiment results for unsupervised anomaly detection with noise:
+
+  |setting |experiment  |AVG AUROC |AVG AUPRC |
+  |--- | --- | ---| ---|
+  |U|Synthetic Noise .0|0.93292+-0.027|0.83512+-0.053|
+
+
 to be done:
 
 - segment_len != 1
