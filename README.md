@@ -38,6 +38,7 @@ done:
   |setting |experiment  |AVG AUROC |AVG AUPRC |
   |--- | --- | ---| ---|
   |U|Synthetic Noise .0|0.93292+-0.027|0.83512+-0.053|
+  |U|Synthetic Noise .2|0.90270+-0.033|0.75150+-0.092|
 
 
 to be done:
