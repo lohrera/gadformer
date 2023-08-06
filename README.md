@@ -31,6 +31,7 @@ done:
   |--- | --- | ---| ---|
   |E|Synthetic Novelty .0|0.96895+-0.016|0.90605+-0.026|
   |E|Synthetic Novelty .01|0.97818+-0.006|0.89580+-0.031|
+  |E|Synthetic Novelty .05|0.95834+-0.020|0.79626+-0.049|
 
 to be done:
 
