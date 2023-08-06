@@ -25,6 +25,12 @@ done:
   |U|Synthetic Novelty .01|0.96265+-0.024|0.82514+-0.067|
   |U|Synthetic Novelty .05|0.93041+-0.030|0.68029+-0.102|
 
+- improved experiment results for semi-supervised novelty detection:
+
+  |setting |experiment  |AVG AUROC |AVG AUPRC |
+  |--- | --- | ---| ---|
+  |E|Synthetic Novelty .0|0.96895+-0.016|0.90605+-0.026|
+
 to be done:
 
 - segment_len != 1
