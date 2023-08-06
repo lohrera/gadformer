@@ -53,3 +53,4 @@ to be done:
 - add remaining experiment results
 - update paper accordingly
 - GRU re-run with 10 seeds
+- permute
