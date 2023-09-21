@@ -54,8 +54,8 @@ def load_trajectory_data(root_dir, file_id:int=0, mode:str='train', traj_step_fe
     print(f'\n-------------Creating *{mode}* dataset from dataset file {filepath} -----\n')
 
     df = pd.read_csv(filepath)
-    labels = np.array(df['Label'])
-
+    labels = np.array(df.query("Step == 0")['Label']) # (1000,)
+    
     print(df)
     
     file = filepath.split('/')[-1]
@@ -65,15 +65,18 @@ def load_trajectory_data(root_dir, file_id:int=0, mode:str='train', traj_step_fe
     
     elif 'bright' in file:
         traj_len, total_trajectories = int(file.split('_')[1]), int(file.split('_')[2])
+        
+    elif 'dbcargo' in file:
+        traj_len, total_trajectories = int(file.split('_')[1]), int(file.split('_')[2])
 
-    else: # synthetic
+    else: # synthetic, amazon
         _, traj_len, total_trajectories, _ = file.split('_')
         traj_len, total_trajectories = int(traj_len), int(total_trajectories)
 
     print(f"trajectory length: {traj_len}, abnormal trajectories: {np.sum(labels[:total_trajectories])}/{total_trajectories}")
     
-    traj_Entity_IDs=list(set(i for i in df.Entity))[:total_trajectories]
-
+    traj_Entity_IDs = np.array(df.query("Step == 0")['Entity'])
+    
     coords=None # changed column names since original columns did not met policies
     for traj_entity_ID in traj_Entity_IDs: 
 
@@ -99,8 +102,7 @@ def load_trajectory_data(root_dir, file_id:int=0, mode:str='train', traj_step_fe
     traj_data = np.reshape(coords_scaled, (len(traj_Entity_IDs), traj_len, len(traj_step_features)))
     # traj_data.shape (1000, 72, 2)
 
-    traj_labels = labels[:total_trajectories]
-    # traj_labels.shape (1000,)
+    traj_labels = labels # labels.shape (1000,)
 
     return traj_data, traj_labels
 
@@ -116,6 +118,7 @@ class TrajectoryDataset(Dataset): # refactored version for MainTUL Comparison (R
         if self.k is not None: 
             #MainTUL Comparison
             # get shuffled knn trajectories (including query trajectory) and create augmented trajectories
+            print(f"create augmented trajectories with kNN={self.k} start...")
             
             traj_embeddings = torch.tensor(get_traj_embeddings(self.data, labels=None, verbose=False, seed=seed))
             traj_pw_distmat = torch.cdist(traj_embeddings, traj_embeddings, p=2)
@@ -124,6 +127,7 @@ class TrajectoryDataset(Dataset): # refactored version for MainTUL Comparison (R
             topknn_traj_indices = torch.tensor([list(topknn_traj_indices[idx, :][torch.randperm(k)].numpy()) for idx in range(0,topknn_traj_indices.shape[0])])
             
             self.aug_data = get_augmented_trajectories(self.data, self.data[0].shape[1], len(traj_step_features), topknn_traj_indices, k)
+            print(f"create augmented trajectories with kNN={self.k} end.")
         
         self.size=len(self.data)
         self.mode=mode

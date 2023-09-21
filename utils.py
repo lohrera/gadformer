@@ -12,6 +12,7 @@ import torch.nn as nn
 import numpy as np
 from numpy.random import MT19937
 from numpy.random import RandomState, SeedSequence
+import copy
 import random 
 import os
 
@@ -60,6 +61,7 @@ class EarlyStopping: # source of original version: main-tul (adapted for GADForm
         self.counter = 0
         self.best_score = None
         self.early_stop = False
+        self.es_score_min_model = None
         self.es_score_min = np.Inf
         self.val_loss_min = np.Inf
         self.delta = delta
@@ -75,6 +77,8 @@ class EarlyStopping: # source of original version: main-tul (adapted for GADForm
             model (Object): [model waiting to be saved]
         """
         
+        best_model_updated=False
+        
         if val_loss_valid:  # -> val_loss >= trn_loss
             #score = -val_loss # original
             score = es_score # adaption for valid_loss_only=False
@@ -82,6 +86,7 @@ class EarlyStopping: # source of original version: main-tul (adapted for GADForm
             if self.best_score is None:
                 self.best_score = score
                 self.save_checkpoint(es_score, val_loss, model, epoch)
+                best_model_updated = True
                 self.counter = 0
             #elif score < self.best_score + self.delta: # original
             elif score >= self.best_score: # adaption for valid_loss_only=False
@@ -91,6 +96,7 @@ class EarlyStopping: # source of original version: main-tul (adapted for GADForm
             else:
                 self.best_score = score
                 self.save_checkpoint(es_score, val_loss, model, epoch)
+                best_model_updated = True
                 self.counter = 0
         
             if val_loss < self.val_loss_min:        
@@ -104,6 +110,8 @@ class EarlyStopping: # source of original version: main-tul (adapted for GADForm
         
         if self.counter >= self.patience:
             self.early_stop = True
+            
+        return best_model_updated
     
     def save_checkpoint(self, es_score, val_loss, model, epoch):
         """[Saves model when validation loss decrease.]
@@ -119,4 +127,6 @@ class EarlyStopping: # source of original version: main-tul (adapted for GADForm
         torch.save(model.state_dict(), self.model_file_path)
         self.es_score_min = es_score
         self.es_score_min_epoch = epoch
+        self.es_score_min_model = model
+        
         
