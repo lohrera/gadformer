@@ -2,7 +2,7 @@
 datasets = [
     {"dataset_name": "synthetic",  "dtype": "S", "input_dims": 72,  "seg_len": 2, "bs": 256, "lr": 1e-3, "wd": 0.00, "drp": 0.00, "epochs": 150, "hds": 12, "trj_step_feat": ['X_Coord','Y_Coord']},
     {"dataset_name": "amazon",     "dtype": "A", "input_dims": 72,  "seg_len": 2, "bs": 256, "lr": 1e-3, "wd": 0.00, "drp": 0.00, "epochs": 150, "hds": 12, "trj_step_feat": ['X_Coord','Y_Coord']},
-    {"dataset_name": "brightkite", "dtype": "B", "input_dims": 500, "seg_len": 2, "bs": 180, "lr": 1e-4, "wd": 1e-6, "drp": 0.01, "epochs": 150, "hds": 8, "trj_step_feat": ['X_Coord','Y_Coord']},
+    {"dataset_name": "brightkite", "dtype": "B", "input_dims": 500, "seg_len": 2, "bs": 256, "lr": 1e-4, "wd": 0.00, "drp": 0.00, "epochs": 150, "hds": 8, "trj_step_feat": ['X_Coord','Y_Coord']},
     {"dataset_name": "dbcargo",    "dtype": "D", "input_dims": 72,  "seg_len": 2, "bs": 256, "lr": 1e-2, "wd": 0.00, "drp": 0.00, "epochs": 150, "hds": 12, "trj_step_feat": ['X_Coord','Y_Coord']}
 ]
 
