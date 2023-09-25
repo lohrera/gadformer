@@ -19,5 +19,6 @@ pytorch_optimizer==2.11.2
 
 cli command:
 ```
+sh ./setup_env.sh
 python main_gadformer.py --root_dir="./datasets/"
 ```
