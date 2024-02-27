@@ -171,7 +171,7 @@ def run(root_dir):
                 }
 
                 dict_hist, best_model = train_model(model, dl_trn, dl_vld, args, dict_hist)
-                dict_hist = test_model(model, dl_tst, args, dict_hist)
+                dict_hist = test_model(best_model, dl_tst, args, dict_hist)
 
                 model = None
                 gc.collect(generation=0)
