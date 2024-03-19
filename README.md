@@ -1,4 +1,4 @@
-# gadf
+# GADformer
 
 ![GADFormer Architecture Overview](./GADFormer_Architecture_Overview.jpg?raw=true)
 
